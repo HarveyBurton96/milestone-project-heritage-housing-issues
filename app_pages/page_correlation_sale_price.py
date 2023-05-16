@@ -1,8 +1,9 @@
-import streamlit as st
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 from src.data_management import load_house_data
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 sns.set_style("whitegrid")
 
 
@@ -54,11 +55,11 @@ def page_correlation_body():
         plt.figure(figsize=(10, 5))
         sns.lmplot(data=df, x=col, y=target_var)
         plt.title(f"{col}", fontsize=20, y=1.05)
-        plt.pyplot()
+        st.pyplot()
 
     if st.checkbox(
         "Show the correlated features against the sale price plots."
-        ):
+    ):
         for col in vars_to_study:
             plot_numerical(df_eda, col, target_var)
             print("\n\n")
