@@ -53,7 +53,7 @@ def page_correlation_body():
 
     def plot_numerical(df, col, target_var):
         plt.figure(figsize=(10, 5))
-        sns.lmplot(data=df, x=col, y=target_var)
+        sns.lmplot(data=df, x=col, y=target_var, truncate=False)
         plt.title(f"{col}", fontsize=20, y=1.05)
         st.pyplot()
 
@@ -63,3 +63,22 @@ def page_correlation_body():
         for col in vars_to_study:
             plot_numerical(df_eda, col, target_var)
             print("\n\n")
+            if col == '1stFlrSF':
+                st.write(
+                    'We can see in the plot above that as the Sale Price increase so does the size of the first floor.')
+            elif col == 'GarageArea':
+                st.write(
+                    'We can see in the plot above that as the Sale Price increase so does the size of the garage.')
+            elif col == 'GrLivArea':
+                st.write(
+                    'We can see in the plot above that as the Sale Price increase so does the size of the above ground living area.')
+            elif col == 'OverallQual':
+                st.write(
+                    'We can see in the plot above that as the Sale Price increase so does the overal finish of the house improves.')
+            elif col == 'TotalBsmtSF':
+                st.write(
+                    'We can see in the plot above that as the Sale Price increase so does the size of the basement.')
+            elif col == 'YearBuilt':
+                st.write(
+                    'We can see in the plot above that as the Sale Price increase the new the year the house was built is.')
+            st.write('---')
