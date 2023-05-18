@@ -14,14 +14,32 @@ def page_predictive_body():
         f"outputs/ml_pipeline/predict_sale_price/{version}/regressor_pipeline.pkl"
     )
 
+    st.header("Prediction Sale Prices")
+
+    st.write(
+        f"One this screen you can enter different values for the key features to determin what any house in Ames, Iowa would sell for.\n\n"
+        f"---")
+
     live_house = DrawInputWidgets()
 
-
-
-    st.write("This is predictive page")
-
-    if st.button("Run analysis"):
+    if st.button("Find predicted sale price"):
         predict_sale_price(live_house, features, sale_price_pipe)
+
+    st.write("---")
+
+    st.success(
+        f"OverallQual - Key:\n"
+        f"- 1: Very Poor\n"
+        f"- 2: Poor\n"
+        f"- 3: Fair\n"
+        f"- 4: Below Average\n"
+        f"- 5: Average\n"
+        f"- 6: Above Average\n"
+        f"- 7: Good\n"
+        f"- 8: Very Good\n"
+        f"- 9: Excellent\n"
+        f"- 10: Very Excellent"
+    )
 
 
 def DrawInputWidgets():
@@ -38,7 +56,7 @@ def DrawInputWidgets():
     with col1:
         feature = 'OverallQual'
         st_widget = st.selectbox(
-            label=f"Rates the overall material and finish of the house - {feature}, 0 to 10",
+            label=f"Rates the overall material and finish of the house - {feature}. The range is: 0 - 10",
             options=df[feature].unique()
         )
     live_house[feature] = st_widget
@@ -46,7 +64,7 @@ def DrawInputWidgets():
     with col2:
         feature = 'TotalBsmtSF'
         st_widget = st.number_input(
-            label=feature,
+            label=f"Total square feet of basement area - {feature}. The range is: 0 - 12220",
             min_value=df[feature].min()*percentageMin,
             max_value=df[feature].max()*percentageMax,
             value=df[feature].median()
@@ -56,7 +74,7 @@ def DrawInputWidgets():
     with col3:
         feature = '2ndFlrSF'
         st_widget = st.number_input(
-            label=feature,
+            label=f"Second-floor square feet - {feature}. The range is: 0 - 4130",
             min_value=df[feature].min()*percentageMin,
             max_value=df[feature].max()*percentageMax,
             value=df[feature].median()
@@ -66,7 +84,7 @@ def DrawInputWidgets():
     with col4:
         feature = 'GarageArea'
         st_widget = st.number_input(
-            label=feature,
+            label=f"Size of garage in square feet - {feature}. The range is: 0 - 2836",
             min_value=df[feature].min()*percentageMin,
             max_value=df[feature].max()*percentageMax,
             value=df[feature].median()
