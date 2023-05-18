@@ -20,15 +20,40 @@ def page_inherited_body():
         f"outputs/ml_pipeline/predict_sale_price/{version}/regressor_pipeline.pkl"
     )
 
-    predict_house_one = predict_sale_price(
-        house_one, features, sale_price_pipe)
-
-    st.write(house_one)
-
-    st.write(house_two)
-
-    st.write(house_three)
-
-    st.write(house_four)
-
     st.header("Four Inherited Houses Sale Prices")
+
+    st.write("---")
+
+    st.subheader("First inherited house")
+
+    predict_sale_price(house_one, features, sale_price_pipe)
+
+    if st.checkbox("See a breakdown of the the first house features"):
+        st.write(house_one)
+
+    st.write("---")
+
+    st.subheader("Second inherited house")
+
+    predict_sale_price(house_two, features, sale_price_pipe)
+
+    if st.checkbox("See a breakdown of the the second house features"):
+        st.write(house_two)
+
+    st.write("---")
+
+    st.subheader("Third inherited house")
+
+    predict_sale_price(house_three, features, sale_price_pipe)
+
+    if st.checkbox("See a breakdown of the the third house features"):
+        st.write(house_three)
+
+    st.write("---")
+
+    st.subheader("Fourth inherited house")
+
+    predict_sale_price(house_four, features, sale_price_pipe)
+
+    if st.checkbox("See a breakdown of the the fourth house features"):
+        st.write(house_four)
