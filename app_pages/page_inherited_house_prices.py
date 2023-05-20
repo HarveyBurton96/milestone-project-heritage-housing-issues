@@ -14,7 +14,7 @@ def page_inherited_body():
 
     features = ['OverallQual', 'TotalBsmtSF', '2ndFlrSF', 'GarageArea']
 
-    version = 'v1'
+    version = 'v3'
 
     sale_price_pipe = load_pkl_file(
         f"outputs/ml_pipeline/predict_sale_price/{version}/regressor_pipeline.pkl"

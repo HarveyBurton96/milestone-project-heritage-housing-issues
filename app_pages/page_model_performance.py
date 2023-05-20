@@ -7,13 +7,16 @@ from src.evaluate_ml import regression_performance
 
 def page_model_body():
 
-    version = 'v1'
+    version = 'v3'
 
     sale_price_pipe = load_pkl_file(
         f"outputs/ml_pipeline/predict_sale_price/{version}/regressor_pipeline.pkl"
     )
     sale_price_importance = plt.imread(
         f"outputs/ml_pipeline/predict_sale_price/{version}/features_importance.png"
+    )
+    evaluation_plot = plt.imread(
+        f"outputs/ml_pipeline/predict_sale_price/{version}/evaluation_plot.png"
     )
     x_train = pd.read_csv(
         f"outputs/ml_pipeline/predict_sale_price/{version}/X_train.csv"
@@ -44,3 +47,5 @@ def page_model_body():
 
     regression_performance(x_train, y_train, x_test,
                            y_test, sale_price_pipe)
+    
+    st.image(evaluation_plot)
