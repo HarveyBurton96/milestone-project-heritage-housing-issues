@@ -17,12 +17,18 @@ def page_predictive_body():
     st.header("Prediction Sale Prices")
 
     st.write(
-        f"One this screen you can enter different values for the key features to determin what any house in Ames, Iowa would sell for.\n\n"
+        f"One this screen you can enter different values for the key features "
+        f"to determin what any house in Ames, Iowa would sell for.\n\n"
+        f"For the section below each widget is for one of the key features of "
+        f"the model. When you click the 'Find the predicted sale price' button"
+        f" the model will tell you the predicted sale price for a house with "
+        f"the features you have input. You can change the values of the inputs"
+        f" to see how the feature affects the sale price.\n\n"
         f"---")
 
     live_house = DrawInputWidgets()
 
-    if st.button("Find predicted sale price"):
+    if st.button("Find the predicted sale price"):
         predict_sale_price(live_house, features, sale_price_pipe)
 
     st.write("---")
@@ -56,7 +62,7 @@ def DrawInputWidgets():
     with col1:
         feature = 'OverallQual'
         st_widget = st.selectbox(
-            label=f"Rates the overall material and finish of the house - {feature}. The range is: 0 - 10",
+            label=f"Rates the overall material and finish of the house - {feature}. Please see the key below.",
             options=df[feature].unique()
         )
     live_house[feature] = st_widget
@@ -74,7 +80,7 @@ def DrawInputWidgets():
     with col3:
         feature = '2ndFlrSF'
         st_widget = st.number_input(
-            label=f"Second-floor square feet - {feature}. The range is: 0 - 4130",
+            label=f"Second-floor square feet - {feature}. The range is : 0 - 4130",
             min_value=df[feature].min()*percentageMin,
             max_value=df[feature].max()*percentageMax,
             value=df[feature].median()
@@ -84,7 +90,7 @@ def DrawInputWidgets():
     with col4:
         feature = 'GarageArea'
         st_widget = st.number_input(
-            label=f"Size of garage in square feet - {feature}. The range is: 0 - 2836",
+            label=f"Size of garage in square feet - {feature}. The range is : 0 - 2836",
             min_value=df[feature].min()*percentageMin,
             max_value=df[feature].max()*percentageMax,
             value=df[feature].median()
