@@ -22,6 +22,11 @@ def page_inherited_body():
 
     st.header("Four Inherited Houses Sale Prices")
 
+    st.info(
+        f"One of our business requirements was to predict the sale price for "
+        f"the four inherited houses. Below you will find the row for each of "
+        f"the houses and there corresponding predicted sale price.")
+
     st.write("---")
 
     st.subheader("First inherited house")

@@ -16,15 +16,16 @@ def page_predictive_body():
 
     st.header("Prediction Sale Prices")
 
-    st.write(
+    st.info(
         f"One this screen you can enter different values for the key features "
         f"to determin what any house in Ames, Iowa would sell for.\n\n"
         f"For the section below each widget is for one of the key features of "
         f"the model. When you click the 'Find the predicted sale price' button"
         f" the model will tell you the predicted sale price for a house with "
         f"the features you have input. You can change the values of the inputs"
-        f" to see how the feature affects the sale price.\n\n"
-        f"---")
+        f" to see how the feature affects the sale price.\n\n")
+
+    st.write("---")
 
     live_house = DrawInputWidgets()
 

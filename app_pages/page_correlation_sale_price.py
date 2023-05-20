@@ -16,9 +16,9 @@ def page_correlation_body():
 
     st.header("Sale Price Correlation Study")
 
-    st.write(
-        f"The client is interested in discovering how the house attributes "
-        f"correlate with the sale price."
+    st.info(
+        f"One of our business requirements was that the client is interested "
+        f"in discovering how the house attributes correlate with the sale price."
     )
 
     if st.button("Show data frame"):
@@ -74,7 +74,7 @@ def page_correlation_body():
                     'We can see in the plot above that as the Sale Price increase so does the size of the above ground living area.')
             elif col == 'OverallQual':
                 st.write(
-                    'We can see in the plot above that as the Sale Price increase so does the overal finish of the house improves.')
+                    'We can see in the plot above that as the Sale Price increase so does the overall finish of the house improves.')
             elif col == 'TotalBsmtSF':
                 st.write(
                     'We can see in the plot above that as the Sale Price increase so does the size of the basement.')

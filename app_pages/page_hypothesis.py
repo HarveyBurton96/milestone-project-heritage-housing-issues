@@ -22,7 +22,7 @@ def page_hypothesis_body():
         f"of the house.\n"
         f"- False, from the correlation study we can see that the overall "
         f"quality of the material and finish of the house has a greater "
-        f"mpact on the sale price than the overall condition of the house.\n\n"
+        f"impact on the sale price than the overall condition of the house.\n\n"
 
         f"4. The size of the garage will have a greater impact on the sale "
         f"price than the size of the wood deck.\n"
