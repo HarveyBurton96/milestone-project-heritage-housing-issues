@@ -33,19 +33,37 @@ def page_model_body():
 
     st.header("ML: Sale Price")
 
-    st.info("Add text about model here")
+    st.info(
+        f"We have used a Regressor model to predict the Sale price of a house."
+        f" The business requirement for our model was to achieve an R2 score "
+        f"greater or equal to 0.75, our model on the train and test data was "
+        f"able to achieve an R2 score over 0.8 meaning our model successfully "
+        f"fulfilled our business requirement."
+    )
 
     st.write("---")
 
-    st.write(sale_price_pipe)
+    st.subheader(
+        "ML pipeline to predict the sale price of a house sold in Ames, Iowa")
+
+    st.write(f"{sale_price_pipe}")
 
     st.write("---")
+
+    st.subheader("Important features")
+    st.write(
+        f"The features: OverallQual, TotalBsmtSF, 2ndFlrSF and GarageArea. "
+        f"Where used to train the model and the graph below shows us their "
+        f"importance."
+    )
 
     st.image(sale_price_importance)
 
     st.write("---")
 
+    st.subheader("Model Evaluation")
+
     regression_performance(x_train, y_train, x_test,
                            y_test, sale_price_pipe)
-    
+
     st.image(evaluation_plot)
