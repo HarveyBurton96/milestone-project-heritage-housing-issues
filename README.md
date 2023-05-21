@@ -1,27 +1,10 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Heritage Housing Issues
 
-## Gitpod Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Gitpod Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Gitpod Template Instructions at least once, though! It contains some important information about Gitpod and the extensions we use. 
-
-## Gitpod Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+Live version is available [here](Fix later)
 
 ## Dataset Content
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
+
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
@@ -51,44 +34,111 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-
-
-
-
 ## Business Requirements
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+    As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
-* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+    Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
 
+    * 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+    * 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them).
+## Hypothesis and validation
 
+### Hypothesis one
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+    The size of the first floor will have a greater impact on the house sale than the size of the second floor.
 
+    * True, from the correlation study we can see that the size of first floor has a greater impact on the house sale price than the size of the second floor.
+
+### Hypothesis Two
+
+    The year the house was built will have a lower impact on the sale price than the year the house was remodelled.
+
+    * False, from the correlation study we can see that the year the house was built has a greater impact on the sale price than the year the house was remodelled.
+
+### Hypothesis Three
+
+    The overall condition of the house will have a greater impact on the sale price than the overall quality of the material and finish of the house.
+
+    * False, from the correlation study we can see that the overall quality of the material and finish of the house has a greater impact on the sale price than the overall condition of the house.
+
+### Hypothesis four
+
+    The size of the garage will have a greater impact on the sale price than the size of the wood deck.
+
+    * True, from the correlation study we can see that the size of the garage has a greater impact on the sale price than the size of the wood deck.
+
+## ML tasks rationale
+
+### Business Requirement 1
+
+The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualizations of the correlated variables against the sale price to show that.
+
+To solve this business requirment we created jupyter notbook 2 Houseing Prices Correlation. This complred the correlation between Sale price and the rest pf the reatures available in the data frame. We used the spearman and Pearson techinique and then combined the two and selected the top 6 most correlated features. Next we plotted scatter plots to show how each feature correlated with the sale price using an mlplot which are recorded below. That completes our business requirment 1.
+
+![Scatterplot of First Floor square feet against Sale Price](/images/readme_images/first_floor_against_sale_price.png)
+
+![Scatterplot of Size of garage in square feet against Sale Price](/images/readme_images/garage_against_sale_price.png)
+
+![Scatterplot of Above grade ground living area square feet against Sale Price](/images/readme_images/GrLiv_against_sale_price.png)
+
+![Scatterplot of Rates the overall material and finish of the house against Sale Price](/images/readme_images/OverallQual_against_Sale_price.png)
+
+![Scatterplot of Total square feet of basement area against Sale Price](/images/readme_images/TotalBsmtSF_vs_Sale_price.png)
+
+![Scatterplot of Original construction date against Sale Price](/images/readme_images/Year_vs_sale_price.png)
+
+### Business Requirement 2
+
+The client is interested in predicting the house sales price from her four inherited houses, and any other house in Ames, Iowa.
+
+To solve this business requirment  we first needed to build our ML pipeline. As the output from our pipeline would be a continuous number i decided to use the regression model. We then cleaned the data in notebook 3 Data Cleaning and then did featture enginering in notebook 4 Feature Enginerring in preperation for finding the best model. Finally we used code from the code instintute churnometer walkthrough project to find the best model and hyperparameters to achieve the best R2 score we could. The model was:
+
+![Model steps](/images/readme_images/pipeline_steps.png)
+
+with the following features used: OverallQual, TotalBsmtSF, 2ndFlrSF and GarageArea. Becuase they were the 4 most important features to the pipeline out of all the features and once we only used them we did not see a big drop in the R2 score of the model.
+
+![Important features](/images/readme_images/Feature_importance.png)
+
+Once we had the model and features decided we evaluated the model to make sure it met our business requirment of a R2 score above 0.75. as we can see in the image below the model passed this requirment with a R2 score of 0.839
+
+![Model evaluation](/images/readme_images/Model_evaluation.png)
+
+![Train and test predictions](/images/readme_images/Train_test_predictions.png)
+
+Now that we have our completed pipeline we can solve the next requirment of finding the value of each of the inherited houses:
+
+![First inherited house predicted sale price](/images/readme_images/First_inherited_house.png)
+
+![Second inherited house predicted sale price](/images/readme_images/Second_inherited_house.png)
+
+![Third inherited house predicted sale price](/images/readme_images/Third_inherited_house.png)
+
+![Fourth inherited house predicted sale price](/images/readme_images/Four_inherited_house.png)
+
+To solve the final reuiremnt of allowing the client to find the sale price of any house in Ames, Iowa. We have built in our streamlit pages widgets that allow the user to input values for the four important features and it will give the predictive sale price for that house.
+
+![Predictive sale price](/images/readme_images/Prediction_sale_price.png)
 
 ## ML Business Case
+
 * In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
 
-
 ## Dashboard Design
+
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
 * Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
 
-
-
 ## Unfixed Bugs
+
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
 
 ## Deployment
+
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
+* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
@@ -100,27 +150,25 @@ Although your friend has an excellent understanding of property prices in her ow
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
+
 * Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
 
+## Credits
 
-## Credits 
+* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
+* You can break the credits section up into Content and Media, depending on what you have included in your project.
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+### Content
 
-### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+* The text for the Home page was taken from Wikipedia Article A
+* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
+* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 ### Media
 
-- The photos used on the home and sign-up page are from This Open Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
+* The photos used on the home and sign-up page are from This Open Source site
+* The images used for the gallery page were taken from this other open-source site
 
 ## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
 
+* In case you would like to thank the people that provided support through this project.
