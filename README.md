@@ -36,12 +36,12 @@ Live version is available [here](Fix later)
 
 ## Business Requirements
 
-    As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
-    Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
 
-    * 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-    * 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
 ## Hypothesis and validation
 
@@ -171,8 +171,67 @@ To solve the final reuiremnt of allowing the client to find the sale price of an
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+At the top of each page we have included text within a blue information box that gives a description of the page below.
+
+### Project Summary
+
+On this page we have gievn a brief descriptions of the contents of the other pages as well as a quick description of the project dataset and the business requirments. 
+
+![Summary page part one](/images/readme_images/Summary_page_part_one.png)
+
+![Summary page part two](/images/readme_images/Summary_page_part_two.png)
+
+### Project Hypothesis and Validation
+
+On this page we have each of our four hypothesis and the validation that we found for each.
+
+![Hypothesis page part one](/images/readme_images/Hypothesis_page_part_one.png)
+
+![Hypothesis page part two](/images/readme_images/Hypothesis_page_part_two.png)
+
+### Sale Price Correlation Study
+
+On this page we show the first 5 rows of the data frame which is shown when the user selects the 'Show data frame' button. We then state the 6 most correlated fratures to the sale price of a house. In the green box directly below we have written how each feature is correlated to the sale price. Finally we have a checkbox that when ticked shows the correlated scatterplots between the features and the sale price.
+
+![Correlation page part one](/images/readme_images/Correlation_page_part_one.png)
+
+![Correlation page part two](/images/readme_images/Correlation_page_part_two.png)
+
+![Correlation page part three](/images/readme_images/Correlation_page_part_three.png)
+
+![Correlation page part four](/images/readme_images/Correlation_page_part_four.png)
+
+![Correlation page part five](/images/readme_images/Correlation_page_part_five.png)
+
+![Correlation page part six](/images/readme_images/Correlation_page_part_six.png)
+
+![Correlation page part seven](/images/readme_images/Correlation_page_part_seven.png)
+
+### Four Inherited Houses Sale Prices
+
+On this page we have split the four inherited houses into there own section. In each section we display the predicted sale price for that house and also a checkbox that when ticked shows the row for the corresponding house with all features present.
+
+![Inherited page part one](/images/readme_images/Inherited_page_part_one.png)
+
+![Inherited page part two](/images/readme_images/Inherited_page_part_two.png)
+
+### Prediction Sale Prices
+
+On this page we have added the widgets allowing the user to enter the features for any house they wish to find the predictive sale price in the Ames, Iowa area. Above each widget is the shortend code used in the data frame, the full title for the feature and for the numerical features the range they can enter in the widget. For the categorical question it'Find the predicted sale price' button which gives the predicted sale price for that house.
+
+![Prediction page part one](/images/readme_images/Prediction_page_part_one.png)
+
+![Prediction page part two](/images/readme_images/Prediction_page_part_two.png)
+
+### ML: Sale Price
+
+On this page we have included the description of the pipelines steps as well as the graph showing the four most important features to the pipeline. Finally we have included the Model evaluation for the user to review as well as a scatterplot for the prediction and actual sale price for the train set and test set.
+
+![ML page part one](/images/readme_images/ML_page_part_one.png)
+
+![ML page part two](/images/readme_images/ML_page_part_two.png)
+
+![ML page part three](/images/readme_images/ML_page_part_three.png)
 
 ## Unfixed Bugs
 
