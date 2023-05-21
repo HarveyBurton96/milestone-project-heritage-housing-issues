@@ -69,6 +69,28 @@ The size of the garage will have a greater impact on the sale price than the siz
 
 * True, from the correlation study we can see that the size of the garage has a greater impact on the sale price than the size of the wood deck.
 
+## CRISP DM
+
+* Buiness Understanding
+  * For this step we will review the request from the client and map out the best solution to solving each business requirment. We will go into more detail about this step in the [ML Business case](## ML Business Case) section below.
+
+* Data Understanding
+  * In this step we will create our first two jupyter notebooks. the first one to download the data from Kaggle and to inspect the data types to check everything is in order. The second notebook we will look at the correlation between the features of the data frame to the Sale price.
+
+* Data Preparation
+  * For this step we create two more jupyter notebooks. Number 3 Data Cleaning is used to evaluate the missing data in the dataset and look at the most appropriate way to hanle each feature with missing data. In number 4 Feature Engineering notebook we look at  different feature engineering methods including categorical encoding - ordinal, numerical transformations to try and achieve a more normal distribution for the features and finallly smart correlated selected variables.
+
+* Modelling
+  * For this step we create a final jupyter notebook called 5 Modelling and Evaluation Predicted Sale Price. In this notebook we look at the best regression model to use and different methods to selecting reduced features to only include the most important one.
+
+* Evaluation
+  * Here we create the streamlit pages and compile the understand and solutions we had found from the data to answer the business requirements for the client. We also make this user friendly for the client to be able to ensily understand and share if needed.
+
+* Deployment
+  * Finally we set the streamlit pages live at this step.
+
+![CRISP DM graph](/images/readme_images/CRISP_DM.png)
+
 ## ML tasks rationale
 
 ### Business Requirement 1
