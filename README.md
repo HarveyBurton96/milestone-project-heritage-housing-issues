@@ -47,27 +47,27 @@ Live version is available [here](Fix later)
 
 ### Hypothesis one
 
-    The size of the first floor will have a greater impact on the house sale than the size of the second floor.
+The size of the first floor will have a greater impact on the house sale than the size of the second floor.
 
-    * True, from the correlation study we can see that the size of first floor has a greater impact on the house sale price than the size of the second floor.
+* True, from the correlation study we can see that the size of first floor has a greater impact on the house sale price than the size of the second floor.
 
 ### Hypothesis Two
 
-    The year the house was built will have a lower impact on the sale price than the year the house was remodelled.
+The year the house was built will have a lower impact on the sale price than the year the house was remodelled.
 
-    * False, from the correlation study we can see that the year the house was built has a greater impact on the sale price than the year the house was remodelled.
+* False, from the correlation study we can see that the year the house was built has a greater impact on the sale price than the year the house was remodelled.
 
 ### Hypothesis Three
 
-    The overall condition of the house will have a greater impact on the sale price than the overall quality of the material and finish of the house.
+The overall condition of the house will have a greater impact on the sale price than the overall quality of the material and finish of the house.
 
-    * False, from the correlation study we can see that the overall quality of the material and finish of the house has a greater impact on the sale price than the overall condition of the house.
+* False, from the correlation study we can see that the overall quality of the material and finish of the house has a greater impact on the sale price than the overall condition of the house.
 
 ### Hypothesis four
 
-    The size of the garage will have a greater impact on the sale price than the size of the wood deck.
+The size of the garage will have a greater impact on the sale price than the size of the wood deck.
 
-    * True, from the correlation study we can see that the size of the garage has a greater impact on the sale price than the size of the wood deck.
+* True, from the correlation study we can see that the size of the garage has a greater impact on the sale price than the size of the wood deck.
 
 ## ML tasks rationale
 
@@ -97,7 +97,7 @@ To solve this business requirment  we first needed to build our ML pipeline. As 
 
 ![Model steps](/images/readme_images/pipeline_steps.png)
 
-with the following features used: OverallQual, TotalBsmtSF, 2ndFlrSF and GarageArea. Becuase they were the 4 most important features to the pipeline out of all the features and once we only used them we did not see a big drop in the R2 score of the model.
+With the following features used: OverallQual, TotalBsmtSF, 2ndFlrSF and GarageArea. Becuase they were the 4 most important features to the pipeline out of all the features and once we only used them we did not see a big drop in the R2 score of the model.
 
 ![Important features](/images/readme_images/Feature_importance.png)
 
@@ -123,7 +123,51 @@ To solve the final reuiremnt of allowing the client to find the sale price of an
 
 ## ML Business Case
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+1. What are the business requirements?
+
+    * The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualizations of the correlated variables against the sale price.
+    * The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.
+
+2. Is there any business requirement that can be answered with conventional data analysis?
+
+    * Yes, we can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
+
+3. Does the client need a dashboard or an API endpoint?
+
+    * The client needs a dashboard
+
+4. What does the client consider as a successful project outcome?
+
+    * A study showing the most relevant variables correlated to sale price.
+    * Also, a capability to predict the sale price for the 4 inherited houses, as well as any other house in Ames, Iowa.
+
+5. Can you break down the project into Epics and User Stories?
+
+    * Information gathering and data collection.
+    * Data visualization, cleaning, and preparation.
+    * Model training, optimization and validation.
+    * Dashboard planning, designing, and development.
+    * Dashboard deployment and release.
+
+6. Ethical or Privacy concerns?
+
+    * No. The dataset given is a public dataset.
+
+7. Does the data suggest a particular model?
+
+    * The data suggests a regressor where the target is the sale price.
+
+8. What are the model's inputs and intended outputs?
+
+    * The inputs are house attribute information and the output is the predicted sale price.
+
+9. What are the criteria for the performance goal of the predictions?
+
+    * We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
+
+10. How will the client benefit?
+
+    * The client will maximize the sales price for the inherited properties. And be able to expand there understanding for property sales in Ames, Iowa.
 
 ## Dashboard Design
 
