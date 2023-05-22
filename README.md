@@ -4,12 +4,43 @@ This projects client has the aim of finding the predicted sale price of houses i
 
 Live version is available [here](https://heritage-housing-issues-hb.herokuapp.com/)
 
-[Resposiveness screenshot]()
+[Responsiveness screenshot](/images/readme_images/live_streamlit_app.png)
+
+## Content
+
+- [Heritage Housing Issues](#heritage-housing-issues)
+  - [Content](#content)
+  - [Dataset Content](#dataset-content)
+  - [Business Requirements](#business-requirements)
+  - [Hypothesis and Validation](#hypothesis-and-validation)
+    - [Hypothesis One](#hypothesis-one)
+    - [Hypothesis Two](#hypothesis-two)
+    - [Hypothesis Three](#hypothesis-three)
+    - [Hypothesis Four](#hypothesis-four)
+  - [CRISP DM](#crisp-dm)
+  - [ML Tasks Rationale](#ml-tasks-rationale)
+    - [Business Requirement 1](#business-requirement-1)
+    - [Business Requirement 2](#business-requirement-2)
+  - [ML Business Case](#ml-business-case)
+  - [Dashboard Design](#dashboard-design)
+    - [Project Summary](#project-summary)
+    - [Project Hypothesis and Validation](#project-hypothesis-and-validation)
+    - [Sale Price Correlation Study](#sale-price-correlation-study)
+    - [Four Inherited Houses Sale Prices](#four-inherited-houses-sale-prices)
+    - [Prediction Sale Prices](#prediction-sale-prices)
+    - [ML: Sale Price](#ml-sale-price)
+  - [Agile development](#agile-development)
+  - [Unfixed Bugs](#unfixed-bugs)
+  - [Deployment](#deployment)
+    - [Heroku](#heroku)
+  - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 
 ## Dataset Content
 
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+- The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
@@ -44,58 +75,58 @@ As a good friend, you are requested by your friend, who has received an inherita
 
 Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
 
-* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+- 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+- 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
-## Hypothesis and validation
+## Hypothesis and Validation
 
-### Hypothesis one
+### Hypothesis One
 
 The size of the first floor will have a greater impact on the house sale than the size of the second floor.
 
-* True, from the correlation study we can see that the size of first floor has a greater impact on the house sale price than the size of the second floor.
+- True, from the correlation study we can see that the size of first floor has a greater impact on the house sale price than the size of the second floor.
 
 ### Hypothesis Two
 
 The year the house was built will have a lower impact on the sale price than the year the house was remodelled.
 
-* False, from the correlation study we can see that the year the house was built has a greater impact on the sale price than the year the house was remodelled.
+- False, from the correlation study we can see that the year the house was built has a greater impact on the sale price than the year the house was remodelled.
 
 ### Hypothesis Three
 
 The overall condition of the house will have a greater impact on the sale price than the overall quality of the material and finish of the house.
 
-* False, from the correlation study we can see that the overall quality of the material and finish of the house has a greater impact on the sale price than the overall condition of the house.
+- False, from the correlation study we can see that the overall quality of the material and finish of the house has a greater impact on the sale price than the overall condition of the house.
 
-### Hypothesis four
+### Hypothesis Four
 
 The size of the garage will have a greater impact on the sale price than the size of the wood deck.
 
-* True, from the correlation study we can see that the size of the garage has a greater impact on the sale price than the size of the wood deck.
+- True, from the correlation study we can see that the size of the garage has a greater impact on the sale price than the size of the wood deck.
 
 ## CRISP DM
 
-* Business Understanding
-  * For this step we will review the request from the client and map out the best solution to solving each business requirement. We will go into more detail about this step in the [ML Business case](#ml-business-case) section below.
+- Business Understanding
+  - For this step we will review the request from the client and map out the best solution to solving each business requirement. We will go into more detail about this step in the [ML Business case](#ml-business-case) section below.
 
-* Data Understanding
-  * In this step we will create our first two jupyter notebooks. The first one to download the data from Kaggle and to inspect the data types to check everything is in order. In the second notebook we will look at the correlation between the features of the data frame to the Sale price.
+- Data Understanding
+  - In this step we will create our first two jupyter notebooks. The first one to download the data from Kaggle and to inspect the data types to check everything is in order. In the second notebook we will look at the correlation between the features of the data frame to the Sale price.
 
-* Data Preparation
-  * For this step we create two more jupyter notebooks. Notebook '3 Data Cleaning' is used to evaluate the missing data in the dataset and look at the most appropriate way to handle each feature with missing data. In notebook '4 Feature Engineering' we look at different feature engineering methods including categorical encoding - ordinal and numerical transformations to try and achieve a more normal distribution for the features and finally smart correlated selected variables.
+- Data Preparation
+  - For this step we create two more jupyter notebooks. Notebook '3 Data Cleaning' is used to evaluate the missing data in the dataset and look at the most appropriate way to handle each feature with missing data. In notebook '4 Feature Engineering' we look at different feature engineering methods including categorical encoding - ordinal and numerical transformations to try and achieve a more normal distribution for the features and finally smart correlated selected variables.
 
-* Modelling
-  * For this step we create a final jupyter notebook called '5 Modelling and Evaluation Predicted Sale Price'. In this notebook we look at the best regression model to use and selecting reduced features to only include the most important one.
+- Modelling
+  - For this step we create a final jupyter notebook called '5 Modelling and Evaluation Predicted Sale Price'. In this notebook we look at the best regression model to use and selecting reduced features to only include the most important one.
 
-* Evaluation
-  * Here we create the streamlit pages and compile the understand and solutions we had found from the data to answer the business requirements for the client. We also make this user friendly for the client to be able to easily understand and share if needed.
+- Evaluation
+  - Here we create the streamlit pages and compile the understand and solutions we had found from the data to answer the business requirements for the client. We also make this user friendly for the client to be able to easily understand and share if needed.
 
-* Deployment
-  * Finally, we set the streamlit pages live at this step.
+- Deployment
+  - Finally, we set the streamlit pages live at this step.
 
 ![CRISP DM graph](/images/readme_images/CRISP_DM.png)
 
-## ML tasks rationale
+## ML Tasks Rationale
 
 ### Business Requirement 1
 
@@ -151,49 +182,49 @@ To solve the final requirement of allowing the client to find the sale price of 
 
 1. What are the business requirements?
 
-    * The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualizations of the correlated variables against the sale price.
-    * The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.
+    - The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualizations of the correlated variables against the sale price.
+    - The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.
 
 2. Is there any business requirement that can be answered with conventional data analysis?
 
-    * Yes, we can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
+    - Yes, we can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
 
 3. Does the client need a dashboard or an API endpoint?
 
-    * The client needs a dashboard
+    - The client needs a dashboard
 
 4. What does the client consider as a successful project outcome?
 
-    * A study showing the most relevant variables correlated to sale price.
-    * Also, a capability to predict the sale price for the 4 inherited houses, as well as any other house in Ames, Iowa.
+    - A study showing the most relevant variables correlated to sale price.
+    - Also, a capability to predict the sale price for the 4 inherited houses, as well as any other house in Ames, Iowa.
 
 5. Can you break down the project into Epics and User Stories?
 
-    * Information gathering and data collection.
-    * Data visualization, cleaning, and preparation.
-    * Model training, optimization and validation.
-    * Dashboard planning, designing, and development.
-    * Dashboard deployment and release.
+    - Information gathering and data collection.
+    - Data visualization, cleaning, and preparation.
+    - Model training, optimization and validation.
+    - Dashboard planning, designing, and development.
+    - Dashboard deployment and release.
 
 6. Ethical or Privacy concerns?
 
-    * No. The dataset given is a public dataset.
+    - No. The dataset given is a public dataset.
 
 7. Does the data suggest a particular model?
 
-    * The data suggests a regressor where the target is the sale price.
+    - The data suggests a regressor where the target is the sale price.
 
 8. What are the model's inputs and intended outputs?
 
-    * The inputs are house attribute information, and the output is the predicted sale price.
+    - The inputs are house attribute information, and the output is the predicted sale price.
 
 9. What are the criteria for the performance goal of the predictions?
 
-    * We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
+    - We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
 
 10. How will the client benefit?
 
-    * The client will maximize the sales price for the inherited properties. And be able to expand their understanding for property sales in Ames, Iowa.
+    - The client will maximize the sales price for the inherited properties. And be able to expand their understanding for property sales in Ames, Iowa.
 
 ## Dashboard Design
 
@@ -267,15 +298,15 @@ I recorded the steps I wished to take in a different document, but after I finis
 
 ## Unfixed Bugs
 
-* Using the inbuilt python checker the only outstanding issue is the length of some of the lines of the code. I have reduced this across the code, but the length of the code doesn't affect the code running.
-* I have performed rigorous manual testing of the streamlit pages, and no outstanding bugs are left.
+- Using the inbuilt python checker the only outstanding issue is the length of some of the lines of the code. I have reduced this across the code, but the length of the code doesn't affect the code running.
+- I have performed rigorous manual testing of the streamlit pages, and no outstanding bugs are left.
 
 ## Deployment
 
 ### Heroku
 
-* The App live link is: [here](https://heritage-housing-issues-hb.herokuapp.com/)
-* The project was deployed to Heroku using the following steps.
+- The App live link is: [here](https://heritage-housing-issues-hb.herokuapp.com/)
+- The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
 2. At the Deploy tab, select GitHub as the deployment method.
@@ -286,25 +317,25 @@ I recorded the steps I wished to take in a different document, but after I finis
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* numpy - Used to perform mathematical operations.
-* pandas - Used to display and manipulate the Data Frame.
-* matplotlib - Used for data visualization e.g. histograms and scatterplots.
-* seaborn - Used for data presentation e.g. heatmaps and scatterplots.
-* pandas-profiling - Used to show an analysis of the Data Frame.
-* ppscore - Used to find the predictive power score of the Data Frame.
-* streamlit - Used to build the web app for the project.
-* feature-engine - Used for data transformations.
-* scikit-learn - Used for the machine learning models.
-* xgboost - Used for regression classification.
+- numpy - Used to perform mathematical operations.
+- pandas - Used to display and manipulate the Data Frame.
+- matplotlib - Used for data visualization e.g. histograms and scatterplots.
+- seaborn - Used for data presentation e.g. heatmaps and scatterplots.
+- pandas-profiling - Used to show an analysis of the Data Frame.
+- ppscore - Used to find the predictive power score of the Data Frame.
+- streamlit - Used to build the web app for the project.
+- feature-engine - Used for data transformations.
+- scikit-learn - Used for the machine learning models.
+- xgboost - Used for regression classification.
 
 ## Credits
 
-* Contents have been copied and some modified from the code institute churnometer walkthrough project. [Please click this link to find my copy of the walkthrough project.](https://github.com/HarveyBurton96/churnometer)
-* [Stack Overflow](https://stackoverflow.com/) used for researching solutions to bugs in the code.
-* The template for this repo provided by [code institute.](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues)
-* The code institute slack community also helped me with solutions to bugs in my code.
-* Inspiration for the readme file from [Vasi012](https://github.com/Vasi012/PP5-Predictive-Analysis)
-* The Crisp DM image is from [Data Science Process Alliance](https://www.datascience-pm.com/crisp-dm-2/)
+- Contents have been copied and some modified from the code institute churnometer walkthrough project. [Please click this link to find my copy of the walkthrough project.](https://github.com/HarveyBurton96/churnometer)
+- [Stack Overflow](https://stackoverflow.com/) used for researching solutions to bugs in the code.
+- The template for this repo provided by [code institute.](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues)
+- The code institute slack community also helped me with solutions to bugs in my code.
+- Inspiration for the readme file from [Vasi012](https://github.com/Vasi012/PP5-Predictive-Analysis)
+- The Crisp DM image is from [Data Science Process Alliance](https://www.datascience-pm.com/crisp-dm-2/)
 
 ## Acknowledgements
 
