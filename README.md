@@ -1,5 +1,7 @@
 # Heritage Housing Issues
 
+This projects client has the main aim of finding the predicted sale price of houses in Ames, Iowa and understanding the correlation between sale price and houses features. Using traditonal analysis and predictive models we have provided a dashbord that the client will be able to use to find the answer to both of these questions.
+
 Live version is available [here](Fix later)
 
 ## Dataset Content
@@ -72,7 +74,7 @@ The size of the garage will have a greater impact on the sale price than the siz
 ## CRISP DM
 
 * Buiness Understanding
-  * For this step we will review the request from the client and map out the best solution to solving each business requirment. We will go into more detail about this step in the [ML Business case](## ML Business Case) section below.
+  * For this step we will review the request from the client and map out the best solution to solving each business requirment. We will go into more detail about this step in the [ML Business case](#ML-Business-Case) section below.
 
 * Data Understanding
   * In this step we will create our first two jupyter notebooks. the first one to download the data from Kaggle and to inspect the data types to check everything is in order. The second notebook we will look at the correlation between the features of the data frame to the Sale price.
@@ -255,9 +257,16 @@ On this page we have included the description of the pipelines steps as well as 
 
 ![ML page part three](/images/readme_images/ML_page_part_three.png)
 
+## Agile development
+
+I recorded the steps I wished to take in a different document, but after I finished the streamlit pages I moved the steps into the issue and project section of this respository.
+
+![Project issues](/images/readme_images/issues.png)
+
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+* Using the inbuilt python checker the only outstanding issue is the length of some of the lines of the code. I have reduced this across the code but the length of the code doesn't affect the code running.
+* I have performed riguros manual testing of the streamlit pages and not outstanding bugs are left.
 
 ## Deployment
 
@@ -276,24 +285,27 @@ On this page we have included the description of the pipelines steps as well as 
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+* numpy - Used to perform mathematical operations.
+* pandas - Used to display and manipulate the Data Frame.
+* matplotlib - Used for data visualization e.g histograms and scatterplots.
+* seaborn - Used for data presentation e.g. heatmaps and scatterplots.
+* pandas-profiling - Used to show an analysis of the Data Frame.
+* ppscore - Used to find the predictive power score of the Data Frame.
+* streamlit - Used to build the web app for the project.
+* feature-engine - Used for data transformations.
+* scikit-learn - Used for the machine learning models.
+* xgboost - Used for regression classification.
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
+* Contents have been copied and some modified from the code institute churnometer walkthrough project. [Please click this link to find my copy of the walkthrough project.](https://github.com/HarveyBurton96/churnometer)
+* [Stack Overflow](https://stackoverflow.com/) used for researching solutions to bugs in the code.
+* The template for this repo provided by [code institute.](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues)
+* The code institute slack community also helped me with solutions to bugs in my code.
+* Insperation for the readme file from [Vasi012](https://github.com/Vasi012/PP5-Predictive-Analysis)
+* The Crisp DM image is from [Data Science Process Alliance](https://www.datascience-pm.com/crisp-dm-2/)
 
-### Content
+## Acknowledgements 
 
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
-
-## Acknowledgements (optional)
-
-* In case you would like to thank the people that provided support through this project.
+* I would like to thank my mentor Marcel for his help during this project.
+* And a thanks to Niel McEwen for his help in the slack community.
