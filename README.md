@@ -2,7 +2,9 @@
 
 This projects client has the aim of finding the predicted sale price of houses in Ames, Iowa and understanding the correlation between sale price and houses features. Using traditional analysis and predictive models we have provided a dashboard that presents the solution to both questions for the client.
 
-Live version is available [here](Fix later)
+Live version is available [here](https://heritage-housing-issues-hb.herokuapp.com/)
+
+[Resposiveness screenshot]()
 
 ## Dataset Content
 
@@ -272,8 +274,7 @@ I recorded the steps I wished to take in a different document, but after I finis
 
 ### Heroku
 
-* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+* The App live link is: [here](https://heritage-housing-issues-hb.herokuapp.com/)
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
