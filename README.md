@@ -4,7 +4,7 @@ This projects client has the aim of finding the predicted sale price of houses i
 
 Live version is available [here](https://heritage-housing-issues-hb.herokuapp.com/)
 
-[Responsiveness screenshot](/images/readme_images/live_streamlit_app.png)
+![Responsiveness screenshot](/images/readme_images/live_streamlit_app.png)
 
 ## Content
 
